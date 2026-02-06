@@ -45,6 +45,9 @@ window.addEventListener("DOMContentLoaded", () => {
     createFloatingElements();
     setupMusicPlayer();
     initLoveMeter();
+
+    // ✅ Force start
+    showNextQuestion(1);
 });
 
 
@@ -85,6 +88,20 @@ function showNextQuestion(num) {
 
     document.getElementById(`question${num}`)
         ?.classList.remove("hidden");
+}
+
+
+// ================= GO TO FINAL (FIX) =================
+
+function goToFinal() {
+    showNextQuestion(3);
+}
+
+
+// ================= FINAL YES (FIX) =================
+
+function finalYes() {
+    celebrate();
 }
 
 
@@ -287,13 +304,6 @@ function setupMusicPlayer(){
 }
 
 
-// ================= GO TO FINAL (FIX) =================
-
-function goToFinal() {
-    showNextQuestion(3);
-}
-
-
 // ================= YES =================
 
 function handleYesClick(){
@@ -307,13 +317,6 @@ function handleYesClick(){
     }
 
     showNextQuestion(2);
-}
-
-
-// ================= FINAL YES (FIX) =================
-
-function finalYes() {
-    celebrate();
 }
 
 
@@ -345,7 +348,7 @@ function celebrate(){
 }
 
 
-// ================= NO BUTTON =================
+// ================= NO =================
 
 const noMessages=[
  "Think again 🤔",
