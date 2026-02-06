@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     document.getElementById("question1Text").textContent =
-        "Hey Arya 💖, This is Adarsh... Will you be my Valentine? 😘";
+        "Hey Rani 💖, This is Raj... Will you be my Valentine? 😘";
 
     document.getElementById("yesBtn1").textContent = "Yes";
     document.getElementById("noBtn1").textContent = "No";
@@ -346,10 +346,10 @@ function celebrate(){
 
 
     document.getElementById("celebrationTitle").textContent=
-        "I Love You Arya ❤️";
+        "I Love You Rani ❤️";
 
     document.getElementById("celebrationMessage").textContent=
-        "You made Adarsh the happiest 💖";
+        "You made Raj the happiest 💖";
 
     document.getElementById("celebrationEmojis").textContent=
         "💍💘🥰💕✨";
