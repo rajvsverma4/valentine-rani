@@ -132,14 +132,13 @@ function initLoveMeter() {
     loveValue.textContent = 100;
 
 
-    loveMeter.addEventListener("input", e => {
+    loveMeter.addEventListener("input", () => {
 
         const value = +loveMeter.value;
 
         loveValue.textContent = value;
 
 
-        // Glow
         const p = value / 10000;
 
         loveMeter.style.boxShadow =
@@ -147,37 +146,12 @@ function initLoveMeter() {
              0 0 ${25+p*70}px rgba(255,128,171,1)`;
 
 
-        // Shake
         shakeScreen(p);
 
 
-        // Messages
-        if (value > 100 && extraLove) {
-
-            extraLove.classList.remove("hidden");
-
-            if (value >= 9000) {
-                extraLove.textContent = "MAX LOVE 💍🔥";
-                extraLove.classList.add("super-love");
-            }
-            else if (value >= 5000) {
-                extraLove.textContent = "Too Much Love 😍";
-            }
-            else {
-                extraLove.textContent = "More Than 100% 😘";
-            }
-
-        } else if (extraLove) {
-
-            extraLove.classList.add("hidden");
-        }
-
-
-        // FINAL MODE
         if (value >= 10000 && !maxTriggered) {
 
             maxTriggered = true;
-
             startFinalExplosion();
         }
 
@@ -186,7 +160,7 @@ function initLoveMeter() {
 }
 
 
-// ================= FINAL EXPLOSION =================
+// ================= FINAL EFFECT =================
 
 function startFinalExplosion() {
 
@@ -272,9 +246,7 @@ function fireworks(){
     for(let i=0;i<6;i++){
 
         setTimeout(()=>{
-
             particleStorm();
-
         },i*250);
     }
 }
@@ -315,6 +287,13 @@ function setupMusicPlayer(){
 }
 
 
+// ================= GO TO FINAL (FIX) =================
+
+function goToFinal() {
+    showNextQuestion(3);
+}
+
+
 // ================= YES =================
 
 function handleYesClick(){
@@ -328,6 +307,13 @@ function handleYesClick(){
     }
 
     showNextQuestion(2);
+}
+
+
+// ================= FINAL YES (FIX) =================
+
+function finalYes() {
+    celebrate();
 }
 
 
@@ -345,13 +331,13 @@ function celebrate(){
     c.classList.remove("hidden");
 
 
-    document.getElementById("celebrationTitle").textContent=
+    document.getElementById("celebrationTitle").textContent =
         "I Love You Rani ❤️";
 
-    document.getElementById("celebrationMessage").textContent=
+    document.getElementById("celebrationMessage").textContent =
         "You made Raj the happiest 💖";
 
-    document.getElementById("celebrationEmojis").textContent=
+    document.getElementById("celebrationEmojis").textContent =
         "💍💘🥰💕✨";
 
 
@@ -359,7 +345,7 @@ function celebrate(){
 }
 
 
-// ================= NO =================
+// ================= NO BUTTON =================
 
 const noMessages=[
  "Think again 🤔",
